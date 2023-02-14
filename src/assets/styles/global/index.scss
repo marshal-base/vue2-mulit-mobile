@@ -1,0 +1,111 @@
+/**
+ * iphoneX等iphone有刘海机型底部适配
+ */
+@supports (bottom: constant(safe-area-inset-bottom)) or (bottom: env(safe-area-inset-bottom)) {
+  body {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .fix-iphonex-btn {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    background-color: #fff;
+  }
+}
+body {
+  background-color: #ECEFF9;
+}
+
+#app {
+  max-width: 768px;
+  min-width: 320px;
+	margin: 0 auto;
+}
+
+#_fsl {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	._loading {
+		background: rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    padding: 5px 10px 10px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #fff;
+
+		.spinner {
+			width: 44px;
+			height: 44px;
+			margin: 0px auto;
+			display: block;
+			background: url("../assets/profile/images/spinner.svg") center center no-repeat;
+			background-size: 44px 44px;
+		}
+	}
+}
+
+[class*=van-hairline]::after {
+  border-color: #c9c9c9;
+}
+
+/*carManager page start*/
+.van-dialog__message {
+  line-height: 1.5;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 36px;
+}
+.van-dialog__content.van-hairline::after {
+  border-color: #c9c9c9;
+}
+.van-overflow-hidden {
+  .van-modal {
+    background-color: rgba(0,0,0,.5);
+  }
+}
+/*carManager page end*/
+
+/* input + btn 验证手机*/
+
+.validate-wrapper {
+  height: 48px;
+  line-height: 48px;
+  position: relative;
+  .phone-wrapper {
+    height: 100%;
+    line-height: 100%;
+    display: inline-block;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: absolute;
+    right: 130px;
+    left: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    input {
+      display: inline-block;
+      border: 0;
+      height: 100%;
+      width: 100%;
+      padding-left: 12px;
+      box-sizing: border-box;
+      font-size: 14px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+  }
+
+  .validate-btn {
+    position: absolute;
+    right: 0;
+    padding: 0 18px;
+  }
+}
