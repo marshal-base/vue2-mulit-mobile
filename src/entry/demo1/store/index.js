@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import createPersistedState from 'vuex-persistedstate'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 
-import profileState from './state'
-import profileActions from './actions'
-import profileMutations from './mutations'
+import profileState from './state';
+import profileActions from './actions';
+import profileMutations from './mutations';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: Object.assign({}, profileState),
@@ -15,11 +15,11 @@ const store = new Vuex.Store({
   plugins: [
     createPersistedState({
       key: 'DEMO-PROGRAM',
-      storage: window.sessionStorage
-    })
-  ]
-})
+      storage: window.sessionStorage,
+    }),
+  ],
+});
 
-window.store = store
+window.store = store;
 
-export default store
+export default store;

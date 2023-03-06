@@ -1,3 +1,3 @@
-import home from './home'
+import home from './home';
 
-export default Object.assign({}, home)
+export default Object.assign({}, home);

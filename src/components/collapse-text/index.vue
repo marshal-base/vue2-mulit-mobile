@@ -18,7 +18,7 @@ export default {
   name: 'collapse-text',
   props: {
     text: '',
-    type: String
+    type: String,
   },
   data() {
     return {
@@ -29,53 +29,53 @@ export default {
       exchangeButton: true,
       // 是否显示展开收起按钮
       showExchangeButton: false,
-      rem: ''
-    }
+      rem: '',
+    };
   },
   mounted() {
-    this.init()
+    this.init();
   },
   methods: {
     init() {
-      this.introduce = this.text
+      this.introduce = this.text;
     },
     showTotalIntro() {
-      this.showTotal = !this.showTotal
-      this.exchangeButton = !this.exchangeButton
+      this.showTotal = !this.showTotal;
+      this.exchangeButton = !this.exchangeButton;
     },
     getRem() {
-      const defaultRem = 16
-      const winWidth = window.innerWidth
-      const rem = (winWidth / 375) * defaultRem
-      return rem
-    }
+      const defaultRem = 16;
+      const winWidth = window.innerWidth;
+      const rem = (winWidth / 375) * defaultRem;
+      return rem;
+    },
   },
   watch: {
     introduce() {
       this.$nextTick(
         () => {
-          const rem = parseFloat(this.getRem())
+          const rem = parseFloat(this.getRem());
           if (!this.$refs.desc) {
-            return
+            return;
           }
-          const descHeight = window.getComputedStyle(this.$refs.desc).height.replace('px', '')
+          const descHeight = window.getComputedStyle(this.$refs.desc).height.replace('px', '');
           if (descHeight > 5.25 * rem) {
             // 显示展开收起按钮
-            this.showExchangeButton = true
-            this.exchangeButton = true
+            this.showExchangeButton = true;
+            this.exchangeButton = true;
             // 不是显示所有
-            this.showTotal = false
+            this.showTotal = false;
           } else {
             // 不显示展开收起按钮
-            this.showExchangeButton = false
+            this.showExchangeButton = false;
             // 没有超过三行就显示所有
-            this.showTotal = true
+            this.showTotal = true;
           }
         }
-      )
-    }
-  }
-}
+      );
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -106,7 +106,7 @@ export default {
       p {
         margin: 0;
         line-height: 21px;
-        color: $theme-color;
+        color: var(--theme-color);
       }
     }
   }
@@ -173,7 +173,7 @@ export default {
         p {
           margin: 0;
           line-height: 21px;
-          color: $theme-color;
+          color: var(--theme-color);
         }
       }
     }
@@ -188,7 +188,7 @@ export default {
   }
   .change-buttom {
     font-size: 14px;
-    color: $theme-color;
+    color: var(--theme-color);
 
     .long {
       text-align: 21px;

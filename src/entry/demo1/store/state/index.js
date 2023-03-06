@@ -1,11 +1,11 @@
-import home from './home'
+import home from './home';
 
 const state = {
-  home
-}
+  home,
+};
 
 if (!window.tempStateProfile) {
-  window.tempStateProfile = JSON.stringify(state)
+  window.tempStateProfile = JSON.stringify(state);
 }
 
-export default state
+export default state;

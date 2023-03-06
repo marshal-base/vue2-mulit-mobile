@@ -11,9 +11,9 @@
 export default {
   mounted() {
     // 更改主题样式颜色
-    document.documentElement.style.setProperty('--theme-color', '#000')
-  }
-}
+    document.documentElement.style.setProperty('--theme-color', '#000');
+  },
+};
 </script>
 
 <style lang="less">
